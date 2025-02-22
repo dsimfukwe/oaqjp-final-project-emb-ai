@@ -1,7 +1,6 @@
 import requests
-import json
 
-def emotion_detector(text_to_analyze):
+def emotion_detector(text_to_analyse):
     '''
     Analyses text and produces an output of the sentiment expressed
     '''
@@ -13,7 +12,4 @@ def emotion_detector(text_to_analyze):
     #Send a post request
     response = requests.post(url, json=myobj, headers=header)
 
-    # Parsing the JSON response from the API
-    formatted_response = json.loads(response.text)
-
-    return formatted_response
+    return response.text
